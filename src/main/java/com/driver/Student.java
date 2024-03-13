@@ -2,11 +2,13 @@ package com.driver;
 
 public class Student {
     private String name;
-    private int id;
+    private String id;
+    private int age;
 
-    public Student(String name, int id) {
+    public Student(String name, String id, int age) {
         this.name = name;
         this.id = id;
+        this.age=age;
     }
 
     // Getters and setters...
@@ -14,13 +16,17 @@ public class Student {
         return name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     @Override
     public String toString() {
-        return "Student [name=" + name + ", id=" + id + "]";
+        return "Student [id=" + id + ", name=" + name + ", age=" + age + "]";
     }
 }
 

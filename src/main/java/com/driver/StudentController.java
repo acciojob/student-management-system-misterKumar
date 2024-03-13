@@ -6,8 +6,8 @@ import java.util.List;
 public class StudentController {
     private List<Student> students = new ArrayList<>();
 
-    public void addStudent(String name, int id) {
-        Student student = new Student(name, id);
+    public void addStudent(String name, String id, int age) {
+        Student student = new Student(name, id, age);
         students.add(student);
     }
 
@@ -15,8 +15,9 @@ public class StudentController {
         return new ArrayList<>(students);
     }
 
-    public void deleteStudent(int id) {
-        students.removeIf(student -> student.getId() == id);
+    public boolean deleteStudent(String id) {
+        boolean removed = students.removeIf(student -> student.getId().equals(id));
+        return removed;
     }
 }
 
