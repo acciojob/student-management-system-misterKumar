@@ -46,14 +46,15 @@ public class StudentManagementSystem {
 
     private static void addStudent(StudentController controller, Scanner scanner) {
         System.out.print("Enter Student ID: ");
-        String id = scanner.nextLine();
+        int id = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("Enter Student Name: ");
         String name = scanner.nextLine();
-        System.out.print("Enter Student Age: ");
-        int age = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+       // System.out.print("Enter Student Age: ");
+//        int age = scanner.nextInt();
+//        scanner.nextLine(); // Consume newline
 
-        controller.addStudent(name, id, age);
+        controller.addStudent(name, id);
         System.out.println("Student added successfully.");
     }
 
@@ -68,7 +69,7 @@ public class StudentManagementSystem {
 
     private static void deleteStudent(StudentController controller, Scanner scanner) {
         System.out.print("Enter Student ID to delete: ");
-        String id = scanner.nextLine();
+        int id = scanner.nextInt();
         boolean deleted = controller.deleteStudent(id);
         if (deleted) {
             System.out.println("Student deleted successfully.");
